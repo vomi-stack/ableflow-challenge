@@ -24,7 +24,7 @@ export function aiPrioritizeTasks(title: string, description: string): Priority 
   let lowScore = 0;
 
   highPriorityKeywords.forEach(keyword => {
-    if (text.includes(keyword)) highScore++;
+    if (text.includes(keyword)) highScore += 2;
   });
 
   mediumPriorityKeywords.forEach(keyword => {
@@ -32,7 +32,7 @@ export function aiPrioritizeTasks(title: string, description: string): Priority 
   });
 
   lowPriorityKeywords.forEach(keyword => {
-    if (text.includes(keyword)) lowScore++;
+    if (text.includes(keyword)) lowScore += 2;
   });
 
   if (highScore > mediumScore && highScore > lowScore) {
