@@ -1,6 +1,10 @@
 [build]
-command = "npx next build"
-publish = ".next"
+  command = "npm install --legacy-peer-deps && npx next build"
+  publish = ".next"
 
 [[plugins]]
-package = "@netlify/plugin-nextjs"
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--legacy-peer-deps"
